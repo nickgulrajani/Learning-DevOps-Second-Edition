@@ -3,8 +3,8 @@ provider "azurerm" {
 }
 
 
-resource "azurerm_resource_group" "acidemobook" {
-  name     = "demoBook"
+resource "azurerm_resource_group" "nickacidemobook" {
+  name     = "nickdemoBook"
   location = "westus2"
 }
 
@@ -18,16 +18,16 @@ variable "dockerhub-username" {
 }
 
 
-resource "azurerm_container_group" "aci-myapp" {
+resource "azurerm_container_group" "nickaci-myapp" {
   name                = "aci-app"
   location            = "West Europe"
   resource_group_name = azurerm_resource_group.acidemobook.name
   ip_address_type     = "public"
-  dns_name_label      = "myapp-demo"
+  dns_name_label      = "nick_myapp-demo"
   os_type             = "linux"
   
   container {
-    name   = "myappdemo"
+    name   = "nickmyappdemo"
     image  = "docker.io/${var.dockerhub-username}/demobook:${var.imageversion}"
     cpu    = "0.5"
     memory = "1.5"

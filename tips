@@ -1,0 +1,4 @@
+
+
+docker run -d --name demoapp -p 8083:80 demobook:v1
+

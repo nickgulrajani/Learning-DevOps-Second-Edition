@@ -1,0 +1,7 @@
+docker build -t demobook:v1 .
+
+docker run -d --name demoapp -p 8083:80 demobook:v1
+
+docker login -u <your dockerhub login>
+
+
